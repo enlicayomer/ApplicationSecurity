@@ -7,7 +7,7 @@ import com.ceng.db.DatabaseProvider;
 
 public class ContextProvider {
 
-	private static final String INSERT_CONTEXT="INSERT INTO icerikler(konuId,icerikBaslik,icerik,userId) values(?,?,?,?)";
+	private static final String INSERT_CONTEXT="INSERT INTO icerikler(icerikBaslik,icerik,userId) values(?,?,?)";
 	
 	public static final ContextProvider INSTANCE=new ContextProvider();
 	
@@ -23,10 +23,9 @@ public class ContextProvider {
 		try{
 			connection=DatabaseProvider.getConnection();
 			statement=connection.prepareStatement(INSERT_CONTEXT);
-			statement.setInt(1, 1);
-			statement.setString(2, baslik);
-			statement.setString(3, icerik);
-			statement.setInt(4, 1);
+			statement.setString(1, baslik);
+			statement.setString(2, icerik);
+			statement.setInt(3, 1);
 			statement.executeUpdate();
 			
 		}catch(Exception e)

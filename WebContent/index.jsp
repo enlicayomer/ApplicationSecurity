@@ -207,7 +207,7 @@
                                               <div class="form-group">
                                                   <div class="col-lg-offset-2 col-lg-10">
                                                      
-                                                      <button class="btn btn-send" type="submit">Giriş</button>
+                                                      <button class="btn btn-send" type="submit">Kaydol</button>
                                                   </div>
                                               </div>
                                           </form>

@@ -8,9 +8,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.ceng.controller.RegisterController;
+
 @WebServlet("/register")
 public class RegisterServlet extends HttpServlet{
 
+	private RegisterController registerController;
+	public RegisterServlet() {
+		registerController=RegisterController.getInstance();
+	}
 	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -20,6 +26,7 @@ public class RegisterServlet extends HttpServlet{
 		String sifre=request.getParameter("sifre");
 		String sifreTekrar=request.getParameter("sifreTekrar");
 		
+		registerController.addUser(adSoyad, mail, sifreTekrar);
 		System.out.println(adSoyad + " "+mail+"  "+sifre+ " "+sifreTekrar);
 	}
 }
